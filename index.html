@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phrase Coder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="title">
+    <h1>¡Hora de Cifrar/Descifrar tu texto!</h1>
+  </div>
+
+  <div class="contenedor">
+    <div class="entrada">
+      <label for="texto">Texto a encriptar/desencriptar:</label>
+      <textarea id="texto" placeholder="Introduce tu texto Encriptado/Desencriptado"></textarea>
+    </div>
+
+    <div class="clave">
+      <label for="clave">Frase clave:</label>
+      <input type="password" id="clave" placeholder="Introduce tu frase secreta">
+    </div>
+
+    <div class="botones">
+      <button onclick="triggerEncrypt()">Cifrar</button>
+      <button onclick="triggerDecrypt()">Descifrar</button>
+    </div>
+
+    <div class="salida">
+      <label for="resultado">Resultado:</label>
+      <textarea id="resultado" placeholder="Aquí aparecerá el texto cifrado/descifrado"></textarea>
+    </div>
+  </div>
+
+  
+  <script src="script.js"></script>
+  <script>
+
+    function triggerEncrypt() 
+    {
+        var result = encriptar(document.getElementById('texto').value, document.getElementById('clave').value);
+        document.getElementById('resultado').value = result;
+    }
+    function triggerDecrypt() 
+    {
+        var result = descifrar(document.getElementById('texto').value, document.getElementById('clave').value) 
+        document.getElementById('resultado').value = result;
+    }
+  </script>
+</body>
+</html>
